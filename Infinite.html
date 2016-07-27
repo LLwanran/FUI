@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>滚动加载</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <h1 class="demos-title">滚动加载</h1>
+  <div id="list" class='demos-content-padded'>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+  </div>
+  <div class="fui-infinite-scroll">
+    <div class="infinite-preloader"></div>
+    正在加载
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/infinite.js"></script>
+  <script>
+    var loading = false;
+    $(document.body).infinite().on("infinite", function() {
+      if(loading) return;
+      loading = true;
+      setTimeout(function() {
+        $("#list").append("<p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>");
+        loading = false;
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>栅格系统</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">栅格系统</h1>
+  </header>
+  <style>
+    .fui-row {
+      margin-top: 10px;
+    }
+    [class*="fui-col-"] {
+      border: 1px solid #ccc;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+  </style>
+  <h2 class='doc-head'>有间距</h2>
+  <div class="fui-row">
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+  </div>
+  <div class="fui-row">
+    <div class="fui-col-33">33</div>
+    <div class="fui-col-33">33</div>
+    <div class="fui-col-33">33</div>
+  </div>
+  <div class="fui-row">
+    <div class="fui-col-50">50</div>
+    <div class="fui-col-50">50</div>
+  </div>
+  <h2 class='doc-head'>无间距</h2>
+  <div class="fui-row fui-no-gutter">
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+    <div class="fui-col-20">20</div>
+  </div>
+  <div class="fui-row fui-no-gutter">
+    <div class="fui-col-33">33</div>
+    <div class="fui-col-33">33</div>
+    <div class="fui-col-33">33</div>
+  </div>
+  <div class="fui-row fui-no-gutter">
+    <div class="fui-col-50">50</div>
+    <div class="fui-col-50">50</div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+</body>
+</html>

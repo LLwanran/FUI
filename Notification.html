@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notification</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Notification</h1>
+  </header>
+  <div class='demos-content-padded'>
+    <a href="javascript:;" id='show-notification' class="fui_btn fui_btn_primary">显示通知</a>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/template7.js"></script>
+  <script src="js/notification.js"></script>
+  <script>
+    $(document).on("click", "#show-notification", function() {
+      $.noti({
+        title: "恭喜，中奖啦！!",
+        text: "立即点击领取一等奖！",
+        media: "<img src='./images/present.png' />",
+        data: {
+          message: "逗你玩的!"
+        },
+        time: 3000,
+        onClick: function(data) {
+          $.alert(data.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

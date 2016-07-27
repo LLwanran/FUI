@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DatetimePicker</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Picker</h1>
+  </header>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time" class="fui_label">默认配置</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time" type="text" value="">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time2" class="fui_label">分钟不可选</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time2" type="text" value="2012-12-12 12:00">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time3" class="fui_label">定制分钟</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time3" type="text">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time4" class="fui_label">定制小时</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time4" type="text" value="2012-12-12 12:00">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time-format" class="fui_label">自定义格式</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time-format" type="text" value="2012/12/12 12:00">
+      </div>
+    </div>
+  </div>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="time-inline" class="fui_label">内联显示</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="time-inline" type="text" value="">
+      </div>
+    </div>
+  </div>
+  <div id="time-container"></div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/picker.js"></script>
+  <script src="js/datetime-picker.js"></script>
+  <script>
+    $("#time").datetimePicker({
+      title: '出发时间',
+      //min: "1990-12-12",
+      //max: "2022-12-12 12:12",
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    });
+    $("#time2").datetimePicker({
+      minutes: ['00'],
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    });
+    $("#time3").datetimePicker({
+      minutes: ['00', '30'],
+      value: '2012-12-12 12:00',
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    });
+    $("#time4").datetimePicker({
+      title: '只能白天',
+      hours: ['08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18'],
+      minutes: ['00', '30'],
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    });
+
+    $("#time-format").datetimePicker({
+      title: '自定义格式',
+      dateSplit: '/',
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    });
+    $("#time-inline").datetimePicker({
+      container: '#time-container',
+      onChange: function (picker, values, displayValues) {
+        console.log(values);
+      }
+    })
+  </script>
+</body>
+</html>

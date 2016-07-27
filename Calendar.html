@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Calendar</h1>
+  </header>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="date" class="fui_label">日期</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="date" type="text">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="date2" class="fui_label">日期</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="date2" type="text" value="2016-12-12">
+      </div>
+    </div>
+  </div>
+  <div class="demos-header">
+    <h2 class="demos-second-title">内联日历</h2>
+  </div>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="date3" class="fui_label">日期</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="date3" type="text">
+      </div>
+    </div>
+  </div>
+  <div id="inline-calendar"></div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/picker.js"></script>
+  <script src="js/calendar.js"></script>
+  <script>
+    $("#date").calendar();
+    $("#date2").calendar();
+    $("#inline-calendar").calendar({
+      container: "#inline-calendar",
+      input: "#date3"
+    });
+  </script>
+  </body>
+</html>

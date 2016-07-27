@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swiper</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+  <style>
+    .swiper-container {
+      width: 100%;
+    }
+    .swiper-container img {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body ontouchstart>
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="./images/swiper-1.jpg" /></div>
+      <div class="swiper-slide"><img src="./images/swiper-2.jpg" /></div>
+      <div class="swiper-slide"><img src="./images/swiper-3.jpg" /></div>
+      <div class="swiper-slide"><img src="./images/swiper-4.jpg" /></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/swiper.js"></script>
+  <script>
+    $(".swiper-container").swiper({
+      loop: true,
+      autoplay: 3000
+    });
+  </script>
+</body>
+</html>

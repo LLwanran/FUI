@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhotoBrowser</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Photo Browser</h1>
+  </header>
+  <div class='demos-content-padded'>
+    <a href="javascript:;" class="fui_btn fui_btn_primary" id="pb1">只有图片</a>
+    <a href="javascript:;" class="fui_btn fui_btn_primary" id="pb2">带说明文案</a>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/template7.js"></script>
+  <script src="js/swiper.js"></script>
+  <script>
+    var pb1 = $.photoBrowser({
+      items: [
+        "./images/swiper-1.jpg",
+        "./images/swiper-2.jpg",
+        "./images/swiper-3.jpg",
+        "./images/swiper-4.jpg"
+      ],
+      onSlideChange: function(index) {
+        console.log(this, index);
+      },
+
+      onOpen: function() {
+        console.log("onOpen", this);
+      },
+      onClose: function() {
+        console.log("onClose", this);
+      }
+    });
+    $("#pb1").click(function() {
+      pb1.open();
+    });
+    var pb2 = $.photoBrowser({
+      items: [
+        {
+          image: "./images/swiper-1.jpg",
+          caption: "明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间？转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
+        },
+        {
+          image: "./images/swiper-2.jpg",
+          caption: "怒发冲冠，凭栏处、潇潇雨歇。抬望眼，仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲、白了少年头，空悲切！靖康耻，犹未雪。臣子恨，何时灭！驾长车，踏破贺兰山缺。壮志饥餐胡虏肉，笑谈渴饮匈奴血。待从头、收拾旧山河，朝天阙。"
+        },
+        {
+          image: "./images/swiper-3.jpg",
+          caption: "大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。乱石穿空，惊涛拍岸，卷起千堆雪。江山如画，一时多少豪杰。遥想公瑾当年，小乔初嫁了，雄姿英发。羽扇纶巾，谈笑间，樯橹灰飞烟灭。故国神游，多情应笑我，早生华发。人生如梦，一尊还酹江月。"
+        },
+        {
+          image: "./images/swiper-4.jpg",
+          caption: "驿外断桥边，寂寞开无主。已是黄昏独自愁，更著风和雨。无意苦争春，一任群芳妒。零落成泥碾作尘，只有香如故。"
+        }
+      ],
+      initIndex: 2
+    });
+    $("#pb2").click(function() {
+      pb2.open();
+    });
+  </script>
+</body>
+</html>

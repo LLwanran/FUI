@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Searchbar</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <div class="fui_search_bar" id="search_bar">
+    <form class="fui_search_outer">
+      <div class="fui_search_inner">
+        <i class="fui_icon_search"></i>
+        <input type="search" class="fui_search_input" id="search_input" placeholder="搜索" required/>
+        <a href="javascript:" class="fui_icon_clear" id="search_clear"></a>
+      </div>
+      <label for="search_input" class="fui_search_text" id="search_text">
+        <i class="fui_icon_search"></i>
+        <span>搜索</span>
+      </label>
+    </form>
+    <a href="javascript:" class="fui_search_cancel" id="search_cancel">取消</a>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/searchbar.js"></script>
+</body>
+</html>

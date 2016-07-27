@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabbar</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <div class="fui_tab">
+    <div class="fui_navbar">
+      <div class="fui_navbar_item fui_bar_item_on">
+        选项一
+      </div>
+      <div class="fui_navbar_item">
+        选项二
+      </div>
+      <div class="fui_navbar_item">
+        选项三
+      </div>
+    </div>
+    <div class="fui_tab_bd"></div>
+    <div class="fui_tabbar">
+      <a href="javascript:;" class="fui_tabbar_item fui_bar_item_on">
+        <div class="fui_tabbar_icon">
+          <img src="./images/icon_nav_button.png" alt="">
+        </div>
+        <p class="fui_tabbar_label">微信</p>
+      </a>
+      <a href="javascript:;" class="fui_tabbar_item">
+        <div class="fui_tabbar_icon">
+          <img src="./images/icon_nav_msg.png" alt="">
+        </div>
+        <p class="fui_tabbar_label">通讯录</p>
+      </a>
+      <a href="javascript:;" class="fui_tabbar_item">
+        <div class="fui_tabbar_icon">
+          <img src="./images/icon_nav_article.png" alt="">
+        </div>
+        <p class="fui_tabbar_label">发现</p>
+      </a>
+      <a href="javascript:;" class="fui_tabbar_item">
+        <div class="fui_tabbar_icon">
+          <img src="./images/icon_nav_cell.png" alt="">
+        </div>
+        <p class="fui_tabbar_label">我</p>
+      </a>
+    </div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/tabbar.js"></script>
+  <script type="text/javascript">
+    $(".fui_tab .fui_navbar_item").click(function(){
+      $(this).addClass("fui_bar_item_on").siblings().removeClass('fui_bar_item_on');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Picker</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Picker</h1>
+  </header>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="name" class="fui_label">姓名</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="name" type="text" value="">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="date" class="fui_label">手机</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="mobile" type="text" value="">
+      </div>
+    </div>
+  </div>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="inline" class="fui_label">内联显示</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="inline" type="text" value="">
+      </div>
+    </div>
+  </div>
+  <div id="picker-container"></div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/picker.js"></script>
+  <script>
+    $("#mobile").picker({
+      title: "请选择您的手机",
+      cols: [
+        {
+          textAlign: 'center',
+          values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6S', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+        }
+      ],
+      onChange: function(p, v, dv) {
+        console.log(p, v, dv);
+      },
+      onClose: function(p, v, d) {
+        console.log("close");
+      }
+    });
+    $("#name").picker({
+      title: "请问您的尊姓大名？",
+      cols: [
+        {
+          textAlign: 'center',
+          values: ['先生', '小姐']
+        },
+        {
+          textAlign: 'center',
+          values: ['张三', '李四', '王五', '赵六', '钱七', '孙八', '田九']
+        }
+      ]
+    });
+
+    $("#inline").picker({
+      container: '#picker-container',
+      cols: [
+        {
+          textAlign: 'center',
+          values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6S', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+        }
+      ],
+      onChange: function(p, v, dv) {
+        console.log(p, v, dv);
+      },
+      onClose: function(p, v, d) {
+        console.log("close");
+      }
+    });
+  </script>
+</body>
+</html>

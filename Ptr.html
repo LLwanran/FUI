@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>下拉刷新</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <div class="fui-pull-to-refresh-layer">
+    <div class='pull-to-refresh-arrow'></div>
+    <div class='pull-to-refresh-preloader'></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+  <h1 class="demos-title">下拉刷新</h1>
+  <p>Time: <span id="time">下拉我试试</span></p>
+  <div id="list" class='demos-content-padded'>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+    <p>党的十八大以来，以习近平同志为总书记的党中央勇立时代潮头，引领“中国号”巨轮，向着实现中华民族伟大复兴的光辉彼岸前进。</p>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/pull-to-refresh.js"></script>
+  <script>
+    $(document.body).pullToRefresh().on("pull-to-refresh", function() {
+      setTimeout(function() {
+        $("#time").text(new Date);
+        $(document.body).pullToRefreshDone();
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

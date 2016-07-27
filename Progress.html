@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Progress</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Progress</h1>
+  </header>
+  <div class='demos-content-padded'>
+    <div class="fui_progress">
+      <div class="fui_progress_bar">
+        <div class="fui_progress_inner_bar js_progress" style="width: 0%;"></div>
+      </div>
+      <a href="javascript:;" class="fui_progress_opr">
+        <i class="fui_icon_cancel"></i>
+      </a>
+    </div>
+    <br>
+    <div class="fui_progress">
+      <div class="fui_progress_bar">
+        <div class="fui_progress_inner_bar js_progress" style="width: 50%;"></div>
+      </div>
+      <a href="javascript:;" class="fui_progress_opr">
+        <i class="fui_icon_cancel"></i>
+      </a>
+    </div>
+    <br>
+    <div class="fui_progress">
+      <div class="fui_progress_bar">
+        <div class="fui_progress_inner_bar js_progress" style="width: 80%;"></div>
+      </div>
+      <a href="javascript:;" class="fui_progress_opr">
+        <i class="fui_icon_cancel"></i>
+      </a>
+    </div>
+    <div class="fui_btn_area">
+      <a class="fui_btn fui_btn_primary" href="javascript:" id="btnStartProgress">开始</a>
+    </div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script type="text/javascript">
+    $("#btnStartProgress").click(function(){
+      if ($(this).hasClass('fui_btn_disabled')) {
+        return;
+      }
+
+      $(this).addClass('fui_btn_disabled');
+
+      var progress = 0;
+      var $progress = $('.js_progress').eq(0);
+
+      function next() {
+          $progress.css({width: progress + '%'});
+          progress = ++progress % 100;
+          setTimeout(next, 30);
+      }
+
+      next();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Select</h1>
+  </header>
+  <div class="fui_cells fui_cells_form">
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="name" class="fui_label">职业</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="job" type="text" value="">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="name" class="fui_label">手机</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="mobile" type="text" value="">
+      </div>
+    </div>
+    <div class="fui_cell">
+      <div class="fui_cell_hd"><label for="name" class="fui_label">爱好</label></div>
+      <div class="fui_cell_bd fui_cell_primary">
+        <input class="fui_input" id="in" type="text" value="">
+      </div>
+    </div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/template7.js"></script>
+  <script src="js/picker.js"></script>
+  <script src="js/select.js"></script>
+  <script>
+    $("#job").select({
+      title: "选择职业",
+      items: ["律师", "医生", "歌手", "学生", "记者", "其他"],
+      onChange: function(d) {
+        console.log(this, d);
+      },
+      onClose: function() {
+        console.log("close");
+      },
+      onOpen: function() {
+        console.log("open");
+      },
+    });
+    $("#mobile").select({
+      title: "选择手机",
+      items: [
+        {
+          title: "iPhone 3GS",
+          value: "001",
+        },
+        {
+          title: "iPhone 5",
+          value: "002",
+        },
+        {
+          title: "iPhone 5S",
+          value: "003",
+        },
+        {
+          title: "iPhone 6",
+          value: "004",
+        },
+        {
+          title: "iPhone 6S",
+          value: "005",
+        },
+        {
+          title: "iPhone 6P",
+          value: "006",
+        },
+        {
+          title: "iPhone 6SP",
+          value: "007",
+        },
+        {
+          title: "iPhone SE",
+          value: "008",
+        },
+        {
+          title: "iPhone 7",
+          value: "009"
+        }
+      ]
+    });
+    $("#in").select({
+      title: "您的爱好",
+      multi: true,
+      min: 2,
+      max: 3,
+      items: [
+        {
+          title: "画画",
+          value: 1,
+          description: "额外的数据1"
+        },
+        {
+          title: "打球",
+          value: 2,
+          description: "额外的数据2"
+        },
+        {
+          title: "唱歌",
+          value: 3,
+          description: "额外的数据3"
+        },
+        {
+          title: "游泳",
+          value: 4,
+          description: "额外的数据4"
+        },
+        {
+          title: "健身",
+          value: 5,
+          description: "额外的数据5"
+        },
+        {
+          title: "赌博",
+          value: 6,
+          description: "额外的数据6"
+        },
+      ],
+      beforeClose: function(values, titles) {
+        if(values.indexOf("6") !== -1) {
+          $.toast("不能选择赌博", "cancel");
+          return false;
+        }
+        return true;
+      },
+      onChange: function(d) {
+        console.log(this, d);
+      }
+    });
+  </script>
+</body>
+</html>

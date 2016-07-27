@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popup</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+</head>
+<body ontouchstart>
+  <header class='demos-header'>
+    <h1 class="demos-title">Popup</h1>
+  </header>
+  <div class='demos-content-padded'>
+    <a href="javascript:;" class="fui_btn fui_btn_primary open-popup" data-target="#full">显示全屏(默认)Popup</a>
+    <a href="javascript:;" class="fui_btn fui_btn_primary open-popup" data-target="#half">显示底部的Popup</a>
+  </div>
+  <div id="full" class='fui-popup-container'>
+    <div class="fui-popup-overlay"></div>
+    <div class="fui-popup-modal">
+      <header class='demos-header'>
+        <h2 class="demos-second-title">Fui</h2>
+        <p class="demos-sub-title">适合web app开发的移动端UI框架</p>
+      </header>
+      <article class="fui_article">
+        <h1>大标题</h1>
+        <section>
+          <h2 class="title">章标题</h2>
+          <section>
+            <h3>1.1 《一剪梅》李清照</h3>
+            <p>红藕香残玉簟秋。轻解罗裳，独上兰舟。云中谁寄锦书来，雁字回时，月满西楼。花自飘零水自流。一种相思，两处闲愁。此情无计可消除，才下眉头，却上心头。</p>
+          </section>
+          <section>
+            <h3>1.2 《相见欢》李煜</h3>
+            <p>无言独上西楼，月如钩。寂寞梧桐深院锁清秋。剪不断，理还乱，是离愁。别是一般滋味在心头。</p>
+          </section>
+        </section>
+        <section>
+          <a href="javascript:;" class="fui_btn fui_btn_plain_primary close-popup">关闭</a>
+        </section>
+      </article>
+    </div>
+  </div>
+  <div id="half" class='fui-popup-container popup-bottom'>
+    <div class="fui-popup-overlay"></div>
+    <div class="fui-popup-modal">
+      <div class="toolbar">
+        <div class="toolbar-inner">
+          <a href="javascript:;" class="picker-button close-popup">关闭</a>
+          <h1 class="title">标题</h1>
+        </div>
+      </div>
+      <div class="modal-content">
+        <div class="fui_grids">
+          <a href="javascript:;" class="fui_grid js_grid" data-id="dialog">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_dialog.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              发布
+            </p>
+          </a>
+          <a href="javascript:;" class="fui_grid js_grid" data-id="progress">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_progress.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              编辑
+            </p>
+          </a>
+          <a href="javascript:;" class="fui_grid js_grid" data-id="msg">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              保存
+            </p>
+          </a>
+          <a href="javascript:;" class="fui_grid js_grid" data-id="dialog">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_dialog.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              发布
+            </p>
+          </a>
+          <a href="javascript:;" class="fui_grid js_grid" data-id="progress">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_progress.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              编辑
+            </p>
+          </a>
+          <a href="javascript:;" class="fui_grid js_grid" data-id="msg">
+            <div class="fui_grid_icon">
+              <img src="images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="fui_grid_label">
+              保存
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/popup.js"></script>
+  <script>
+    $(document).on("open", ".fui-popup-modal", function() {
+      console.log("open popup");
+    }).on("close", ".fui-popup-modal", function() {
+      console.log("close popup");
+    });
+  </script>
+</body>
+</html>
