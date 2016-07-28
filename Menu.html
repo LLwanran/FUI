@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/fui.css">
+  <style>
+    .panel,body{background-color:#fff}
+    .menu{background-color:#1D1F20;background-image:linear-gradient(145deg,#1D1F20,#404348)}
+    .menu a{color:#fff}
+    .menu a:hover{text-decoration:underline}
+    .menu-header{border-bottom:1px solid #2a2d2f;padding:20px;background-size:32px}
+    .menu-header-title{font-weight:400;letter-spacing:.5px;margin:0}
+    .menu-section{margin:25px 0}
+    .menu-section-title{text-transform:uppercase;color:#85888d;font-weight:200;font-size:13px;letter-spacing:1px;padding:0 20px;margin:0}
+    .menu-section-list{padding:0;margin:10px 0;list-style:none}
+    .menu-section-list a{display:block;padding:10px 20px}
+    .panel{text-align:center;padding-top:5px;min-height:100%}
+    #mocha{text-align:left;margin:0!important}
+    #mocha-stats{top:70px}
+    .panel-header{margin:120px auto 55px}
+    .title{font-size:3.2em;line-height:1em;margin:0 0 15px;color:#4B5;font-weight:400}
+    .btn-hamburger{border:none;position:absolute;top:12px;left:12px;outline:0;background:url(images/menu.png) no-repeat center;width:32px;height:32px}
+    .box{border:1px solid #4b5;border-radius:4px;text-align:left;margin:50px 10px;position:relative}
+    .box:after,.box:before{content:' ';display:inline-block;width:1px;height:50px;border-left:1px solid #4b5;position:absolute;left:50%}
+    .box:before{top:-50px}
+    .box:after{bottom:-50px}
+    .box-title{margin:0;padding:10px 20px;border-bottom:1px solid #4b5;color:#4b5;font-size:1.2em;font-weight:400}
+    .box-content{padding:20px;background-color:#f8f8f8}
+    @media all and (min-width:40em){.btn-hamburger{top:20px;left:30px}
+    .panel-header{margin-top:40px;width:455px}
+    .title{font-size:4.2em}
+    }
+    @media all and (min-width:54em){.box{width:70%;max-width:1200px;margin:50px auto}
+    }
+    .panel-footer{margin:10px auto 20px}
+    .panel-footer p{padding-bottom:20px}
+    .heart{font-style:normal;font-weight:500;color:#c0392b;text-decoration:none}
+    body{width:100%;height:100%}
+    .slideout-menu{position:fixed;left:0;top:0;bottom:0;right:0;z-index:0;width:256px;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}
+    .slideout-panel{position:relative;z-index:1;will-change:transform}
+    .slideout-open,.slideout-open .slideout-panel,.slideout-open body{overflow:hidden}
+    .slideout-open .slideout-menu{display:block}
+  </style>
+</head>
+<body ontouchstart>
+  <!-- <header class='demos-header'>
+    <h1 class="demos-title">侧边菜单栏</h1>
+  </header> -->
+  <nav id="menu" class="menu slideout-menu">
+    <a href="javascript:;">
+      <header class="menu-header">
+        <span class="menu-header-title">左侧菜单</span>
+      </header>
+    </a>
+    <section class="menu-section">
+      <h3 class="menu-section-title">左滑关闭</h3>
+      <ul class="menu-section-list">
+        <li><a href="javascript:;">开通会员</a></li>
+        <li><a href="javascript:;">个性装扮</a></li>
+        <li><a href="javascript:;">我的空间</a></li>
+        <li><a href="javascript:;">设置</a></li>
+      </ul>
+    </section>
+  </nav>
+  <main id="panel" class="panel">
+    <header class="panel-header">
+      <button class="btn-hamburger" id="leftPush"></button>
+      <h1 class="title">侧边菜单栏</h1>
+    </header>
+    <section class="box">
+      <h2 class="box-title">标题</h2>
+      <div class="box-content">内容</div>
+    </section>
+    <footer class="panel-footer">
+      <p></p>
+    </footer>
+  </main>
+  <script src="js/lib/jquery-2.1.4.js"></script>
+  <script src="js/jquery-extend.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/device.js"></script>
+  <script src="js/slideout.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'duration': 300,//默认300
+        'fx': 'ease',//默认ease，可选ease、linear、ease-in、ease-out、ease-in-out、step-start、step-end
+        'touch': true,//是否开启手势滑动，默认true
+        'side': 'left'//默认left，可选left、right
+      });
+
+      document.querySelector('#leftPush').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    };
+  </script>
+</body>
+</html>

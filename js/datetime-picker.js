@@ -1,9 +1,5 @@
-/* global $:true */
-/* jshint unused:false*/
-
 + function($) {
   "use strict";
-
 
   var defaults;
 
@@ -82,7 +78,7 @@
           picker.cols[2].setValue(currentValue);
 
           //check min and max
-          
+
           var current = self.arrayToDate(values);
           var valid = true;
           if(params.min) {
@@ -91,14 +87,14 @@
             if(current < +min) {
               picker.setValue(lastValidValues);
               valid = false;
-            } 
+            }
           }
           if(params.max) {
             var max = self.arrayToDate(self.stringToArray(typeof params.max === "function" ? params.max() : params.max));
             if(current > +max) {
               picker.setValue(lastValidValues);
               valid = false;
-            } 
+            }
           }
 
           valid && (lastValidValues = values);
